@@ -1,4 +1,4 @@
-const API_BASE = "https://msd-backend-g9hl.onrender.com"; // backend URL
+const API_BASE = "https://msd-backend-1-qp75.onrender.com";
 
 const tableBody = document.querySelector("tbody");
 const transactionForm = document.getElementById("transaction-form");
