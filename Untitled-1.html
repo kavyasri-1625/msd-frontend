@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clamp Text</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .responsive-text {
+    font-size: clamp(1rem, 2vw, 2rem); /* min: 1rem, preferred: 2vw, max: 2rem */
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<h1 class="responsive-text">This text scales between 1rem and 2rem based on viewport width</h1>
+
+</body>
+</html>

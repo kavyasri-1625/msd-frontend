@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rupee Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Rupee Budget Tracker</h1>
+    <p class="subtitle">Track your income and expenses in ₹</p>
+  </header>
+
+  <main class="container">
+
+    <section class="summary">
+      <div class="card income">
+        <h3>Total Income</h3>
+        <p class="amount" id="incomeDisplay">₹ 0</p>
+      </div>
+      <div class="card expense">
+        <h3>Total Expenses</h3>
+        <p class="amount" id="expenseDisplay">₹ 0</p>
+      </div>
+      <div class="card balance">
+        <h3>Balance</h3>
+        <p class="amount" id="balanceDisplay">₹ 0</p>
+      </div>
+    </section>
+
+    <section class="add-transaction">
+      <h2>Add Transaction</h2>
+      <form id="transaction-form">
+        <input type="text" id="titleInput" placeholder="Description" required>
+        <input type="number" id="amountInput" placeholder="Amount" required>
+        <select id="typeInput" required>
+          <option value="">Select Type</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="transaction-area">
+      <h2>Transaction History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Amount (₹)</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BudgetTracker India</p>
+  </footer>
+</body>
+</html>
