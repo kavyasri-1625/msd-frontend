@@ -1,4 +1,5 @@
-const API_BASE = "https://msd-backend-1-qp75.onrender.com";
+const API_BASE = "https://msd-backend-2.onrender.com";
+
 
 const tableBody = document.querySelector("tbody");
 const transactionForm = document.getElementById("transaction-form");
@@ -38,8 +39,7 @@ async function loadTransactions() {
     const transactions = await res.json();
 
     tableBody.innerHTML = "";
-    let totalIncome = 0,
-      totalExpense = 0;
+    let totalIncome = 0, totalExpense = 0;
 
     transactions.forEach((tx) => {
       const row = document.createElement("tr");
@@ -62,16 +62,16 @@ async function loadTransactions() {
     balanceDisplay.className = "amount " + (balance >= 0 ? "positive" : "negative");
 
     if (balance < 0) {
-      messageBox.textContent =
-        " Your balance is negative! Try saving money for upcoming needs.";
+      messageBox.textContent = " Your balance is negative! Try saving money for upcoming needs.";
       messageBox.style.color = "#dc2626";
     } else if (balance > 0 && balance < 1000) {
       messageBox.textContent = " You’re doing okay, but keep an eye on your spending!";
-      messageBox.style.color = "#000000ff";
+      messageBox.style.color = "#f59e0b";
     } else {
       messageBox.textContent = " Great job! You’re managing your budget perfectly!";
       messageBox.style.color = "#16a34a";
     }
+
   } catch (err) {
     console.error("Error loading transactions:", err);
   }
@@ -92,7 +92,6 @@ transactionForm.addEventListener("submit", async (e) => {
     body: JSON.stringify(transaction),
   });
 
-  
   titleInput.value = "";
   amountInput.value = "";
   typeInput.value = "";
@@ -105,7 +104,7 @@ resetBtn.addEventListener("click", async () => {
   if (!confirmReset) return;
 
   try {
-    await fetch(`${API_BASE}/transactions`, { method: "DELETE" }); 
+    await fetch(`${API_BASE}/transactions`, { method: "DELETE" });
     tableBody.innerHTML = "";
     incomeDisplay.textContent = "₹ 0";
     expenseDisplay.textContent = "₹ 0";
